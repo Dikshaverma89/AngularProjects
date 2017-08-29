@@ -1,0 +1,28 @@
+<table class="table table-bordered table-striped"  ng-controller="tableCtrl">
+
+	<thead>
+		<tr>
+			<th>
+				<a ng-click="sortType('Id')">
+					Id 
+				</a>
+			</th>
+			<th>
+				<a ng-click="sortType('Title')">
+					Title 
+				</a>
+			</th>
+			<th>Description 
+			</th>
+		</tr>
+	</thead>
+				
+	<tbody>
+	<tr ng-repeat="data in tableList | orderBy:sortTypeCol:sortReverse ">
+	  <td>{{ data.id }}</td>
+	  <td>{{ data.title }}</td>
+	  <td>{{ data.body }}</td>
+	</tr>
+	</tbody>
+	
+</table>
